@@ -12,7 +12,8 @@ type RevealProps = PropsWithChildren<{
 
 export default function Reveal({ children, className, delayClass, threshold = 0.15 }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null)
-  const [visible, setVisible] = useState(false)
+  // Default to visible so SSR/no-JS still shows content
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     const el = ref.current
@@ -33,7 +34,7 @@ export default function Reveal({ children, className, delayClass, threshold = 0.
   }, [threshold])
 
   const baseHidden = 'opacity-0 translate-y-2'
-  const baseVisible = `animate-in fade-in slide-in-from-bottom-2 duration-700 ${delayClass ?? ''}`
+  const baseVisible = `motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 ${delayClass ?? ''}`
   const classes = `${visible ? baseVisible : baseHidden} ${className ?? ''}`
 
   return (
@@ -42,4 +43,3 @@ export default function Reveal({ children, className, delayClass, threshold = 0.
     </div>
   )
 }
-

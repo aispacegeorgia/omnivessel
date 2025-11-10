@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import { ArrowRightIcon, RocketIcon, MobileIcon, EnvelopeClosedIcon, Cross1Icon } from '@radix-ui/react-icons'
 
 export default function Hero() {
-  const [reveal, setReveal] = useState(false)
+  // Default to visible so SSR/no-JS still shows content
+  const [reveal, setReveal] = useState(true)
   const [showCallSheet, setShowCallSheet] = useState(false)
+  // Keep a tiny delay-based animation for clients that have JS
   useEffect(() => {
     const t = setTimeout(() => setReveal(true), 50)
     return () => clearTimeout(t)
@@ -27,17 +29,17 @@ export default function Hero() {
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-[28rem] w-[28rem] rounded-full bg-maritime-ocean/20 blur-3xl" />
       <div className="container relative py-24 sm:py-32">
         <div className="mx-auto max-w-3xl text-center">
-          <span className={`inline-flex items-center gap-2 rounded-full border border-maritime-navy/10 bg-white/70 px-3 py-1 text-xs font-medium text-maritime-navy/70 backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-maritime-mist/80 ${reveal ? 'animate-in fade-in slide-in-from-bottom-2 duration-700' : 'opacity-0'}`}>
+          <span className={`inline-flex items-center gap-2 rounded-full border border-maritime-navy/10 bg-white/70 px-3 py-1 text-xs font-medium text-maritime-navy/70 backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-maritime-mist/80 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700' : 'opacity-0'}`}>
             <RocketIcon className="h-3.5 w-3.5" />
             Compliance. Readiness. Assurance. Delivered by maritime professionals.
           </span>
-          <h1 className={`mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl ${reveal ? 'animate-in fade-in slide-in-from-bottom-2 duration-700 delay-100' : 'opacity-0'}`}>
+          <h1 className={`mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-100' : 'opacity-0'}`}>
             Total Compliance Solutions for Shipowners and Shipmanagers
           </h1>
-          <p className={`mt-4 text-base text-maritime-navy/80 sm:text-lg dark:text-maritime-mist/80 ${reveal ? 'animate-in fade-in slide-in-from-bottom-2 duration-700 delay-200' : 'opacity-0'}`}>
+          <p className={`mt-4 text-base text-maritime-navy/80 sm:text-lg dark:text-maritime-mist/80 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-200' : 'opacity-0'}`}>
             We help fleets maintain full compliance and inspection readiness across all standards including PSC, Flag, SIRE 2.0, CDI, and RightShip. From pre-inspection to crisis management, OmniVessel ensures your vessels stay safe, compliant, and operationally efficient.
           </p>
-          <div className={`mt-8 flex items-center justify-center gap-3 ${reveal ? 'animate-in fade-in slide-in-from-bottom-2 duration-700 delay-300' : 'opacity-0'}`}>
+          <div className={`mt-8 flex items-center justify-center gap-3 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-300' : 'opacity-0'}`}>
             <a
               href="#services"
               className="inline-flex items-center gap-2 rounded-md bg-maritime-ocean px-4 py-2 text-white shadow-sm transition hover:bg-maritime-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maritime-ocean"
@@ -52,7 +54,7 @@ export default function Hero() {
               Learn More
             </a>
           </div>
-          <div className={`mt-3 flex items-center justify-center gap-3 sm:hidden ${reveal ? 'animate-in fade-in slide-in-from-bottom-2 duration-700 delay-400' : 'opacity-0'}`}>
+          <div className={`mt-3 flex items-center justify-center gap-3 sm:hidden ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-400' : 'opacity-0'}`}>
             <button
               type="button"
               onClick={() => setShowCallSheet(true)}
