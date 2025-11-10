@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Note: Cloudflare Pages expects static output in `out`.
-  // Using `distDir: 'out'` per deployment requirements.
-  distDir: 'out',
+  // Use default `.next` for build artifacts; export writes to `out/` automatically.
   trailingSlash: true,
   images: {
     unoptimized: true,
