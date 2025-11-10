@@ -1,6 +1,9 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Section from '@/components/Section'
+import About from '@/components/About'
+import Services from '@/components/Services'
+import News from '@/components/News'
+import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
 export default function Page() {
@@ -9,10 +12,10 @@ export default function Page() {
       <Header />
       <main id="content">
         <Hero />
-        <Section id="about" title="About" />
-        <Section id="services" title="Services" />
-        <Section id="news" title="News" />
-        <Section id="contact" title="Contact" />
+        <About />
+        <Services />
+        <News />
+        <Contact />
       </main>
       <Footer />
     </>
