@@ -65,7 +65,7 @@ export default function Hero() {
                 height={2242}
                 className="h-full w-full object-cover"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-maritime-navy/20 to-transparent dark:from-black/40" />
