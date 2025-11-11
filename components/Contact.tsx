@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl">Contact</h2>
             <p className="mt-3 text-maritime-navy/80 dark:text-maritime-mist/80">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Get in touch below.
+              Booking a pre‑inspection, requesting a readiness audit, or need urgent advice? Reach our team below and we’ll respond promptly.
             </p>
           </div>
         </Reveal>

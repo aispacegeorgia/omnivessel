@@ -19,3 +19,37 @@ h1, h2, h3, h4, h5, h6 {
   outline: 2px dashed theme('colors.maritime.navy');
   outline-offset: 2px;
 }
+
+/* Selection color */
+::selection {
+  background: theme('colors.maritime.ocean');
+  color: white;
+}
+
+/* Subtle grid background helper for hero/visual blocks */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(10,34,64,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10,34,64,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  }
+}
+
+/* Section header underline accent */
+.section-kicker {
+  @apply inline-flex items-center gap-2 text-xs font-medium text-maritime-navy/70 dark:text-maritime-mist/70;
+}
+.section-kicker::after {
+  content: '';
+  width: 36px;
+  height: 1px;
+  @apply bg-maritime-ocean/50 dark:bg-maritime-teal/60;
+  display: inline-block;
+}

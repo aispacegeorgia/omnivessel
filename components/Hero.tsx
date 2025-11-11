@@ -27,32 +27,49 @@ export default function Hero() {
       className="relative overflow-hidden border-b border-maritime-navy/10 bg-gradient-to-b from-maritime-ocean/10 via-maritime-teal/10 to-maritime-mist dark:from-maritime-navy dark:via-maritime-navy dark:to-maritime-navy"
     >
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-[28rem] w-[28rem] rounded-full bg-maritime-ocean/20 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" aria-hidden />
       <div className="container relative py-24 sm:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <span className={`inline-flex items-center gap-2 rounded-full border border-maritime-navy/10 bg-white/70 px-3 py-1 text-xs font-medium text-maritime-navy/70 backdrop-blur dark:border-white/10 dark:bg-white/10 dark:text-maritime-mist/80 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700' : 'opacity-0'}`}>
             <RocketIcon className="h-3.5 w-3.5" />
-            Compliance. Readiness. Assurance. Delivered by maritime professionals.
+            Inspection‑ready fleets. Zero surprises.
           </span>
           <h1 className={`mt-6 text-4xl font-extrabold tracking-tight sm:text-6xl ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-100' : 'opacity-0'}`}>
-            Total Compliance Solutions for Shipowners and Shipmanagers
+            Inspection‑Ready Compliance for Modern Fleets
           </h1>
           <p className={`mt-4 text-base text-maritime-navy/80 sm:text-lg dark:text-maritime-mist/80 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-200' : 'opacity-0'}`}>
-            We help fleets maintain full compliance and inspection readiness across all standards including PSC, Flag, SIRE 2.0, CDI, and RightShip. From pre-inspection to crisis management, OmniVessel ensures your vessels stay safe, compliant, and operationally efficient.
+            OmniVessel helps shipowners and managers achieve full compliance across PSC, Flag, SIRE 2.0, CDI, and RightShip. From pre‑inspection audits to deficiency closure and crisis support, we keep your vessels safe, compliant, and moving.
           </p>
           <div className={`mt-8 flex items-center justify-center gap-3 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-300' : 'opacity-0'}`}>
             <a
               href="#services"
               className="inline-flex items-center gap-2 rounded-md bg-maritime-ocean px-4 py-2 text-white shadow-sm transition hover:bg-maritime-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maritime-ocean"
             >
-              Get Started
+              Explore Services
               <ArrowRightIcon className="h-4 w-4" />
             </a>
             <a
               href="#about"
               className="inline-flex items-center gap-2 rounded-md bg-white/70 px-4 py-2 text-maritime-navy shadow-sm ring-1 ring-inset ring-maritime-navy/10 backdrop-blur transition hover:bg-white dark:bg-white/10 dark:text-white dark:ring-white/10 dark:hover:bg-white/20"
             >
-              Learn More
+              Why OmniVessel
             </a>
+          </div>
+          {/* Hero image banner */}
+          <div className={`mt-12 ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-300' : 'opacity-0'}`}>
+            <div className="relative mx-auto aspect-[21/9] w-full max-w-5xl overflow-hidden rounded-2xl border border-maritime-navy/10 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
+              <img
+                src="/hero-vessel.jpg"
+                alt="Aerial view of tanker vessel at sea"
+                width={3992}
+                height={2242}
+                className="h-full w-full object-cover"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-maritime-navy/20 to-transparent dark:from-black/40" />
+            </div>
           </div>
           <div className={`mt-3 flex items-center justify-center gap-3 sm:hidden ${reveal ? 'motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-700 motion-safe:delay-400' : 'opacity-0'}`}>
             <button
